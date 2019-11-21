@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-padding">
+        <ion-list>
+          <ion-item>
+            <ion-label>Tipo Identificacion</ion-label>
+            <ion-select placeholder="Select One">
+              <ion-select-option value="cc"
+                >Cedula de ciudadania</ion-select-option
+              >
+              <ion-select-option value="ce"
+                >Cedula de ciudadania</ion-select-option
+              >
+              <ion-select-option value="ps">Pasaporte</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <ion-input placeholder="Numero Identificacion"></ion-input>
+        <ion-input placeholder="Password" type="password"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-padding">
+        <ion-button shape="round" fill="outline">Ingresar</ion-button>
+        <br />
+        <br />
+
+        <a href="#">Olvido contraseña</a>
+        <br />
+        <br />
+        <a href="#">Registrarse</a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
