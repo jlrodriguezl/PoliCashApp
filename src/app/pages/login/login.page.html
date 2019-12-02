@@ -1,17 +1,11 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content text-center>
-  <ion-grid>
+<ion-content class="ion-text-center" color="dark">
+  <app-header></app-header>
+  <ion-grid color="dark">
     <ion-row>
       <ion-col class="ion-padding">
         <ion-list>
-          <ion-item>
-            <ion-label>Tipo Identificacion</ion-label>
-            <ion-select placeholder="Select One">
+          <ion-item color="dark">            
+            <ion-select placeholder="Tipo Identificación">
               <ion-select-option value="cc"
                 >Cedula de ciudadania</ion-select-option
               >
@@ -44,4 +38,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <app-footer></app-footer>
 </ion-content>

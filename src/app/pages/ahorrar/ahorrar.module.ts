@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AhorrarPageRoutingModule } from './ahorrar-routing.module';
 
 import { AhorrarPage } from './ahorrar.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AhorrarPageRoutingModule
+    AhorrarPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [AhorrarPage]
 })
