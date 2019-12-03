@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { RetirarPageRoutingModule } from './retirar-routing.module';
 
 import { RetirarPage } from './retirar.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RetirarPageRoutingModule
+    RetirarPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [RetirarPage]
 })
