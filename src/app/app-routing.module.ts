@@ -8,7 +8,11 @@ const routes: Routes = [
   { path: 'ahorrar', loadChildren: () => import('./pages/ahorrar/ahorrar.module').then( m => m.AhorrarPageModule)},
   { path: 'pricipal', loadChildren: () => import('./pages/pricipal/pricipal.module').then( m => m.PricipalPageModule)},
   { path: 'retirar', loadChildren: () => import('./pages/retirar/retirar.module').then( m => m.RetirarPageModule)},
-  { path: 'transferir', loadChildren: () => import('./pages/transferir/transferir.module').then( m => m.TransferirPageModule)}
+  { path: 'transferir', loadChildren: () => import('./pages/transferir/transferir.module').then( m => m.TransferirPageModule)},
+  { path: 'agregar', loadChildren: () => import('./pages/agregar/agregar.module').then( m => m.AgregarPageModule)}
+
+
+  
 ];
 
 @NgModule({
