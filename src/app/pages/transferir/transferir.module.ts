@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { TransferirPageRoutingModule } from './transferir-routing.module';
 
 import { TransferirPage } from './transferir.page';
+import { ComponentsModule } from 'src/app/components/components.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TransferirPageRoutingModule
+    TransferirPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [TransferirPage]
 })
