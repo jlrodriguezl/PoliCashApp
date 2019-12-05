@@ -18,7 +18,7 @@ export class AgregarPage implements OnInit {
           placeholder: 'Ingrese el codigo'
         },
         {
-          name: 'Valor  Retiro',
+          name: 'Valor Retiro',
           type: 'text',
           id: 'name2-id',
           placeholder: 'Valor Retiro'
