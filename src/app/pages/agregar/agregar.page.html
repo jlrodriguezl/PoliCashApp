@@ -1,3 +1,4 @@
+
 <ion-content class="ion-text-center" color="dark">
   <app-header></app-header>
   <ion-grid color="dark">
@@ -8,17 +9,28 @@
     <p>Bienvenido al metodo de pago por Codigo QR, Para hacer el pago hacerca un dispositivo de lectura el cual e redireccinara al pago</p>
     <ion-row>
       <ion-col class="ion-no-padding">
-          <ion-img src="assets/img/QR.png" style="width:45%; height:45%; text-align: center;"></ion-img>
+          <ion-img src="assets/img/QR.png" style="width:80%; height:80%; text-align: center;"></ion-img>
       </ion-col>
     </ion-row>
     <ion-item>
         <ion-label position="floating">
-          Escanear Recibo, Si tiene alguna Duda de clik 
+         Hola el  Escanear Recibo, Si tiene alguna Duda de clik 
         <a href="https://www.xataka.com/basics/que-es-un-codigo-qr-y-como-leerlo-con-el-movil">Aqui
         </a>
       </ion-label>
-    </ion-item>    
-  
+    </ion-item> 
+    <ion-button (click)="presentAlertPrompt()"
+  color="success" 
+              expand="block">Pagar QR
+                </ion-button>   
+    <ion-back-button color="tertiary" defaultHref="/principal"
+    >Regresar</ion-back-button>
   </ion-grid>
+  <!-- fab placed to the (vertical) center and start -->
+  <ion-fab vertical="center" horizontal="start" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <app-footer></app-footer>
 </ion-content>
