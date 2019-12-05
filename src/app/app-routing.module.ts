@@ -11,7 +11,11 @@ const routes: Routes = [
   { path: 'transferir', loadChildren: () => import('./pages/transferir/transferir.module').then( m => m.TransferirPageModule)},
   { path: 'pagar', loadChildren: () => import('./pages/agregar/agregar.module').then( m => m.AgregarPageModule)},
   { path: 'movimientos', loadChildren: () => import('./pages/movimientos/movimientos.module').then( m => m.MovimientosPageModule)},
-  { path: 'registrar', loadChildren: () => import('./pages/registrar/registrar.module').then( m => m.RegistrarPageModule)}
+  { path: 'registrar', loadChildren: () => import('./pages/registrar/registrar.module').then( m => m.RegistrarPageModule)},  {
+    path: 'visor',
+    loadChildren: () => import('./pages/visor/visor.module').then( m => m.VisorPageModule)
+  }
+
 ];
 
 @NgModule({
