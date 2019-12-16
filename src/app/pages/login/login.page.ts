@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PersonaService } from 'src/app/services/persona.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/models/personas.model';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginPage implements OnInit {
 
   constructor(private personaService:PersonaService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private alertCtrl: AlertController) { }
 
   ngOnInit() {
     this.user = new Persona();
@@ -21,10 +23,18 @@ export class LoginPage implements OnInit {
 
   login(){
     console.log(this.user);
+    this.router.navigate(['/principal']);
     this.personaService.login(this.user).subscribe(
-      response => {
+      async response => {
         if(response === 1){
           this.router.navigate(['/principal']);
+        }else{
+          const alert = await this.alertCtrl.create({         
+            header: 'Login',                           
+            message: 'Datos Incorrectos',         
+            buttons: ['OK']       
+          });       
+          alert.present();   
         }
       },
       error => {
