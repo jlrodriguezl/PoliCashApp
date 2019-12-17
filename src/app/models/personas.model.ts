@@ -8,7 +8,7 @@ export class Persona {
   celular: string;
   correo: string;
   contrasena: string;
-  listaCuentas: Cuenta[];
+  cuenta: Cuenta;
 
   constructor(/*
     tipo_id: string,

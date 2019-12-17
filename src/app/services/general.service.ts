@@ -1,13 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Persona } from '../models/personas.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeneralService {
+  user:Persona;
+  constructor() { 
+    this.user = new Persona();
+  }
 
-  constructor() { }
+  guardarStorage(user:Persona){
+    localStorage.setItem('user', JSON.stringify(user))
+  }
 
-  guardarStorage(){
-    //localStorage.setItem('data', JSON.stringify())
+  cargarStorage(){
+    if(localStorage.getItem('user')){
+      this.user = JSON.parse(localStorage.getItem('user'));
+      return this.user;
+    }
   }
 }

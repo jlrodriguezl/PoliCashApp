@@ -3,6 +3,7 @@ import { PersonaService } from 'src/app/services/persona.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/models/personas.model';
 import { AlertController } from '@ionic/angular';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginPage implements OnInit {
   user:Persona;
 
   constructor(private personaService:PersonaService,
+              private generalService:GeneralService,
               private route: ActivatedRoute,
               private router: Router,
               private alertCtrl: AlertController) { }
@@ -22,11 +24,12 @@ export class LoginPage implements OnInit {
   }
 
   login(){
-    console.log(this.user);
-    this.router.navigate(['/principal']);
+    console.log(this.user);    
     this.personaService.login(this.user).subscribe(
       async response => {
         if(response === 1){
+          this.user.contrasena = "";
+          this.generalService.guardarStorage(this.user);
           this.router.navigate(['/principal']);
         }else{
           const alert = await this.alertCtrl.create({         
