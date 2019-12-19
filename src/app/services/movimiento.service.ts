@@ -13,7 +13,7 @@ export class MovimientoService {
     this.url = GLOBAL.url;
   }
 
-  ahorrar(movimiento: Movimiento): Observable<any> {
+  registrarMov(movimiento: Movimiento): Observable<any> {
     let json = JSON.stringify(movimiento);
     let params = "json=" + json;
     let headers = new HttpHeaders().set(
