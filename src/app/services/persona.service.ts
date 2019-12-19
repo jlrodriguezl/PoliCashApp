@@ -7,16 +7,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PersonaService {
-  public url:string;
-  constructor(public http:HttpClient) { 
+  public url: string;
+  constructor(public http: HttpClient) {
     //Recuperar url de archivo global.ts
     this.url = GLOBAL.url;
   }
 
-  login(user):Observable<any>{
+  login(user): Observable<any> {
     let json = JSON.stringify(user);
-    let params = 'json='+json;
+    let params = 'json=' + json;
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-    return this.http.post(this.url+'login', params, {headers: headers});
+    return this.http.post(this.url + 'login', params, { headers: headers });
+  }
+
+  signUp(user): Observable<any> {
+    let json = JSON.stringify(user);
+    let params = 'json=' + json;
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this.http.post(this.url + 'registrar', params, { headers: headers });
   }
 }
