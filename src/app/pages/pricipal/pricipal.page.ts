@@ -16,10 +16,11 @@ export class PricipalPage implements OnInit {
   constructor(private generalService:GeneralService,
               private cuentaService: CuentaService,
               private alertCtrl:AlertController) { 
-    this.cuenta = new Cuenta();
+    this.cuenta = new Cuenta();    
   }
 
   ngOnInit() {
+    console.log("Init Principal");
     //Consultar la cuenta del usuario
     this.user = this.generalService.cargarStorage();
     this.cuentaService.getCuenta(this.user).subscribe(

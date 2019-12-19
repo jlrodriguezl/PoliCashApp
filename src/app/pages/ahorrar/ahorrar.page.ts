@@ -40,23 +40,29 @@ export class AhorrarPage implements OnInit {
     this.movimiento.codigoAuth = "";
 
     console.log(this.movimiento);
-    this.ahorrarMov();
-    const alert = await this.alertController.create({
-      header: "Exitoso!",
-      subHeader: "Ahorraste",
-      message: String(this.monto),
-      buttons: ["OK"]
-    });
-
-    await alert.present();
+    this.ahorrarMov();    
   }
 
   ahorrarMov() {
-    this.movimientoService.ahorrar(this.movimiento).subscribe(
-      response => {
+    this.movimientoService.registrarMov(this.movimiento).subscribe(
+      async response => {
         console.log(response.code);
-        if (response.code === 200) {
-          this.router.navigate(["/principal"]);
+        if (response.code === 200) {          
+          const alert = await this.alertController.create({
+            header: "Exitoso!",
+            subHeader: "Ahorraste",
+            message: String(this.monto),
+            buttons: [
+              {
+                text: "OK",
+                handler: () => {
+                  this.router.navigate(["/principal"]);
+                }
+              }
+            ]
+          });
+      
+          await alert.present();
         }
       },
       error => {

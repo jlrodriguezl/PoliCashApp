@@ -3,13 +3,13 @@
     <p align="center">Transferencias</p>
   <ion-item color="dark">
     <ion-label position="floating">Monto a Transferir</ion-label>
-    <ion-textarea></ion-textarea>
+    <ion-input [(ngModel)]="movimiento.valorMovimiento"></ion-input>
   </ion-item>
   <ion-item color="dark">
     <ion-label position="floating">Cuenta a Transferir</ion-label>
-    <ion-textarea></ion-textarea>
+    <ion-input [(ngModel)]="cuentaDestino"></ion-input>
   </ion-item>
-  <ion-button (click)="presentAlert()"
+  <ion-button (click)="transferir()"
   color="success" 
               expand="block">Transferir
                 </ion-button>
