@@ -1,17 +1,15 @@
 <ion-content class="ion-text-center" color="dark">
-    <app-header></app-header>
-    
-    <p align="center">Retiros</p>
+  <app-header></app-header>
+
+  <p align="center">Retiros</p>
   <ion-item color="dark">
-        <ion-label position="floating">Monto a Retirar</ion-label>
-    <ion-textarea></ion-textarea>
+    <ion-label position="floating">Monto a Retirar</ion-label>
+    <ion-input [(ngModel)]="movimiento.valorMovimiento"></ion-input>
   </ion-item>
-  <ion-button (click)="presentAlert()" color="success" 
-              expand="block">Retirar
-       </ion-button>
-   
-       <ion-back-button color="tertiary" defaultHref="/principal"
-          ></ion-back-button>
-       <!--<ion-button expand="block" defaultHref="/principal"> Regresar </ion-button>-->
-<app-footer></app-footer> 
+  <ion-button (click)="retirar()" color="success" expand="block">Retirar
+  </ion-button>
+
+  <ion-back-button color="tertiary" defaultHref="/principal"></ion-back-button>
+  <!--<ion-button expand="block" defaultHref="/principal"> Regresar </ion-button>-->
+  <app-footer></app-footer>
 </ion-content>

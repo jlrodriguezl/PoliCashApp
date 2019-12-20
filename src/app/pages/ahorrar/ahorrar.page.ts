@@ -22,20 +22,20 @@ export class AhorrarPage implements OnInit {
     private movimientoService: MovimientoService,
     private generalService: GeneralService
   ) {
-    this.movimiento = new Movimiento();    
+    this.movimiento = new Movimiento();
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     //Recuperar datos del usuario
     this.user = this.generalService.cargarStorage();
   }
 
-  async ahorrar() {
+  async registrarMov() {
     this.movimiento.tipoMovimiento = "C";
     this.movimiento.descMovimiento = "Ahorro";
     this.movimiento.valorMovimiento = this.monto;
     this.movimiento.estadoMovimiento = "A";
-    this.movimiento.detMovimiento = "Depósito en cuenta";   
+    this.movimiento.detMovimiento = "Depósito en cuenta";
     this.movimiento.idCuenta = this.user.cuenta.idCuenta;
     this.movimiento.codigoAuth = "";
 
@@ -52,7 +52,7 @@ export class AhorrarPage implements OnInit {
   }
 
   ahorrarMov() {
-    this.movimientoService.ahorrar(this.movimiento).subscribe(
+    this.movimientoService.registrarMov(this.movimiento).subscribe(
       response => {
         console.log(response.code);
         if (response.code === 200) {

@@ -1,3 +1,3 @@
 export var GLOBAL = {
-    url: 'http://localhost/PoliCashApi/public/api/'
+    url: 'http://localhost:8080/Laravel/PoliCashApi/public/api/'
 };
